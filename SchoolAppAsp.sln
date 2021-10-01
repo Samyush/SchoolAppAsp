@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppAsp.WebAPI", "Scho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppASP.Infastructure", "SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj", "{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppASP.Core", "SchoolAppASP.Core\SchoolAppASP.Core.csproj", "{0624BC49-BC10-4376-9D7E-489B34EF58E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0624BC49-BC10-4376-9D7E-489B34EF58E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0624BC49-BC10-4376-9D7E-489B34EF58E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0624BC49-BC10-4376-9D7E-489B34EF58E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0624BC49-BC10-4376-9D7E-489B34EF58E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj" />
+    <ProjectReference Include="..\SchoolAppASP.Core\SchoolAppASP.Core.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
 
