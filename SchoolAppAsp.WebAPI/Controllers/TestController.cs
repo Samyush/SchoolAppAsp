@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SchoolAppASP.Infastructure;
-using SchoolAppASP.Core;
 
 namespace SchoolAppAsp.WebAPI.Controllers
 {
@@ -13,22 +12,21 @@ namespace SchoolAppAsp.WebAPI.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        [HttpGet]
-        [Route("test1")]
+
         public string Test()
         {
 
             Class1 csvt = new Class1();
-            return csvt.Returns();
+            return "Test Success";
         }
 
 
-        [HttpGet]
-        [Route("test2")]
-        public string Testorate()
-        {
-            Tester ts = new Tester();
-            return ts.Testers();
-        }
+
+
+
+
+
+
+
     }
 }
