@@ -19,14 +19,5 @@ namespace SchoolAppAsp.WebAPI.Controllers
             Class1 csvt = new Class1();
             return "Test Success";
         }
-
-
-
-
-
-
-
-
-
     }
 }
