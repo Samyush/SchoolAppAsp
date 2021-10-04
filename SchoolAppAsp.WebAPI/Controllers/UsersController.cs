@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SchoolAppASP.Infastructure.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -48,6 +49,14 @@ namespace SchoolAppAsp.WebAPI.Controllers
         public int Nepal()
         {
             return 7;
+        }
+
+        [HttpGet]
+        [Route("test123")]
+        public string Test()
+        {
+            Users csvt = new Users();
+            return csvt.ToString();
         }
     }
 }

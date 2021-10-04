@@ -6,7 +6,7 @@ namespace SchoolAppASP.Infastructure
     {
         public string Returns()
         {
-            return "sth";
+            return "Tripti";
         }
     }
 }
