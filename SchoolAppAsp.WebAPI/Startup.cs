@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore;
 
 namespace SchoolAppAsp.WebAPI
 {
@@ -26,6 +28,12 @@ namespace SchoolAppAsp.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolApps", Version = "v1" });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,6 +42,11 @@ namespace SchoolAppAsp.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SchoolApps v1"));
+
             }
 
             //app.UseHttpsRedirection();
@@ -46,6 +59,8 @@ namespace SchoolAppAsp.WebAPI
             {
                 endpoints.MapControllers();
             });
+
+
         }
     }
 }

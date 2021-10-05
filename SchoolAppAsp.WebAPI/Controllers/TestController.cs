@@ -26,7 +26,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
         {
 
             var listDt = new int[3, 4] { { 0, 1, 2, 3 }, { 4, 5, 6, 7 }, { 8, 9, 10, 11 }, };
-            var tester = 1232;
+            var tester = "success in JSON";
 
             //var jpt = 1;
             //var value = JSON.stringify({

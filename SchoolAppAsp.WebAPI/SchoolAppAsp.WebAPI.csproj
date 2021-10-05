@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj" />
     <ProjectReference Include="..\SchoolAppASP.Core\SchoolAppASP.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
