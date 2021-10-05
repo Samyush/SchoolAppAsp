@@ -12,6 +12,28 @@ namespace SchoolAppAsp.WebAPI.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
+        [HttpPost]
+        [Route("Login")]
+        public string Login(string name, string password)
+        {
+            if(name == "name" && password == "name")
+            {
+                return "success";
+            }
+            else
+            {
+                return "failed";
+            }
+        }
+
+        [HttpPost]
+        [Route("Logout")]
+        public string Logout()
+        {
+            return "success";
+        }
+
+
         // GET: api/values
         [HttpGet]
         public IEnumerable<string> Get()
