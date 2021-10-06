@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using SchoolAppASP.Infastructure.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -33,6 +34,36 @@ namespace SchoolAppAsp.WebAPI.Controllers
             return "success";
         }
 
+        // how to send data as json here on return
+        [HttpGet]
+        [Route("UserDetails")]
+        public IActionResult UserData()
+        {
+            Users users = new Users();
+            users.ID = 12;
+            users.Name = "hello";
+            users.Email = "hello123";
+            users.expDt = DateTime.UtcNow;
+
+            var jsonRt = JsonConvert.SerializeObject(users);
+
+            return Ok(jsonRt.ToArray());
+        }
+
+        [HttpGet]
+        [Route("UserDetails2")]
+        public string UserData2()
+        {
+            Users users = new Users();
+            users.ID = 12;
+            users.Name = "hello";
+            users.Email = "hello123";
+            users.expDt = DateTime.UtcNow;
+
+            var jsonRt = JsonConvert.SerializeObject(users);
+
+            return jsonRt;
+        }
 
         // GET: api/values
         [HttpGet]
@@ -66,12 +97,6 @@ namespace SchoolAppAsp.WebAPI.Controllers
         {
         }
 
-        [HttpGet]
-        [Route("nepal")]
-        public int Nepal()
-        {
-            return 7;
-        }
 
         [HttpGet]
         [Route("test123")]
