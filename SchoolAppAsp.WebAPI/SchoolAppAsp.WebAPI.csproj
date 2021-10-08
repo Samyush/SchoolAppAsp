@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj" />
     <ProjectReference Include="..\SchoolAppASP.Core\SchoolAppASP.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
