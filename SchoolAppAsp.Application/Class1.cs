@@ -1,8 +1,12 @@
 ﻿using System;
 
-namespace SchoolAppAsp.Application
+namespace SchoolAppASP.Application
 {
     public class Class1
     {
+        public string Hello()
+        {
+            return "hello";
+        }
     }
 }
