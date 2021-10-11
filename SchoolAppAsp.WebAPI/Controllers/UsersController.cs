@@ -37,7 +37,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
         // how to send data as json here on return
         [HttpGet]
         [Route("UserDetails")]
-        public IActionResult UserData()
+        public IEnumerable<String> UserData()
         {
             Users users = new Users();
             users.ID = 12;
@@ -47,7 +47,9 @@ namespace SchoolAppAsp.WebAPI.Controllers
 
             var jsonRt = JsonConvert.SerializeObject(users);
 
-            return Ok(jsonRt.ToArray());
+            //yield return jsonRt;
+
+            return new string[] { jsonRt };
         }
 
         [HttpGet]
