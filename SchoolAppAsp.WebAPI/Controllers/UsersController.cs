@@ -49,6 +49,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
 
             //yield return jsonRt;
 
+            //return new string[] { users };
             return new string[] { jsonRt };
         }
 
