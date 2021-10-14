@@ -35,9 +35,14 @@ namespace SchoolAppAsp.WebAPI.Controllers
         }
 
         // how to send data as json here on return
+
+        /// <summary>
+        /// the object can be directly send through IActionResult and directly inside object type declaration
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("UserDetails")]
-        public IEnumerable<String> UserData()
+        public IEnumerable<object> UserData()
         {
             Users users = new Users();
             users.ID = 12;
@@ -46,6 +51,31 @@ namespace SchoolAppAsp.WebAPI.Controllers
             users.expDt = DateTime.UtcNow;
 
             var jsonRt = JsonConvert.SerializeObject(users);
+
+            //yield return jsonRt;
+
+            //return new string[] { users };
+            return new object[] { users };
+        }
+
+        /// <summary>
+        /// here in below code the string returns all data of user object
+        /// as string and inside JSON convert serilize object
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("UserDetails")]
+        public IEnumerable<string> UserDatas()
+        {
+            Users users = new Users();
+            users.ID = 12;
+            users.Name = "hello";
+            users.Email = "hello123";
+            users.expDt = DateTime.UtcNow;
+
+            var jsonRt = JsonConvert.SerializeObject(users);
+
+            // TODO: find the use of JsonConvert.SerializeObject()??????  
 
             //yield return jsonRt;
 
@@ -66,6 +96,24 @@ namespace SchoolAppAsp.WebAPI.Controllers
             var jsonRt = JsonConvert.SerializeObject(users);
 
             return jsonRt;
+        }
+
+
+        /// <summary>
+        /// the object can be directly send through IActionResult and directly inside Ok(object)
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("test22")]
+        public IActionResult Noname()
+        {
+            Users users = new Users();
+            users.ID = 12;
+            users.Name = "hello";
+            users.Email = "hello123";
+            users.expDt = DateTime.UtcNow;
+
+            return Ok(users);
         }
 
         // GET: api/values
@@ -100,7 +148,6 @@ namespace SchoolAppAsp.WebAPI.Controllers
         {
         }
 
-
         [HttpGet]
         [Route("test123")]
         public string Test()
@@ -108,5 +155,6 @@ namespace SchoolAppAsp.WebAPI.Controllers
             Users csvt = new Users();
             return csvt.ToString();
         }
+
     }
 }
