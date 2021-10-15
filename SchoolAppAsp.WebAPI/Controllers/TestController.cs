@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SchoolAppASP.Infastructure;
+using System.Web.Helpers;
+using SchoolAppASP.Infastructure.Models;
 
 namespace SchoolAppAsp.WebAPI.Controllers
 {
@@ -37,6 +39,45 @@ namespace SchoolAppAsp.WebAPI.Controllers
 
             //how to send array or json out of asp.net core api -> Ok(object) sends data as JSON
             return Ok(tester);
+        }
+
+        [HttpGet]
+        [Route("123")]
+        public IActionResult TryOn()
+        {
+            return Ok(23);
+        }
+
+        /// <summary>
+        /// the below code even though not having any errors now
+        /// it shows run time errors as path or route on RedirectToAction
+        /// </summary>
+        /// <returns>to find out the solution or working mech of RedirectToAction</returns>
+        [HttpGet]
+        [Route("7")]
+        public async Task<IActionResult> Adds()
+        {
+            Users users = new Users();
+            users.ID = 12;
+            users.Name = "hello";
+            users.Email = "hello123";
+            users.expDt = DateTime.UtcNow;
+
+            try {
+                //RedirectToAction
+                await Task.Run(() => {
+                    for (int a = 0; a < 2; a++)
+                    {
+                        Console.WriteLine(" Simple demonstration of await keyword.");
+                    }
+                });
+                return RedirectToAction("~/Users/UserDetails");
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
     }
 }
