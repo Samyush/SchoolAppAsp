@@ -62,9 +62,9 @@ namespace SchoolAppAsp.WebAPI.Controllers
         /// here in below code the string returns all data of user object
         /// as string and inside JSON convert serilize object
         /// </summary>
-        /// <returns></returns>
+        /// <returns>errors comes along when multiple controller methods have same routes</returns>
         [HttpGet]
-        [Route("UserDetails")]
+        [Route("UserDetailsString")]
         public IEnumerable<string> UserDatas()
         {
             Users users = new Users();
