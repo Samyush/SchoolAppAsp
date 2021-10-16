@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SchoolAppASP.Application
+﻿namespace SchoolAppASP.Application
 {
     public class Class1
     {

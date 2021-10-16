@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
 using SchoolAppASP.Infastructure;
-using System.Web.Helpers;
 using SchoolAppASP.Infastructure.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace SchoolAppAsp.WebAPI.Controllers
 {
@@ -45,7 +41,9 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("123")]
         public IActionResult TryOn()
         {
-            return Ok(23);
+            //return Unauthorized();
+            //return NotFound();
+            return BadRequest();
         }
 
         /// <summary>
@@ -54,7 +52,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
         /// </summary>
         /// <returns>to find out the solution or working mech of RedirectToAction</returns>
         [HttpGet]
-        [Route("7")]
+        [Route("sam")]
         public async Task<IActionResult> Adds()
         {
             Users users = new Users();
@@ -63,20 +61,22 @@ namespace SchoolAppAsp.WebAPI.Controllers
             users.Email = "hello123";
             users.expDt = DateTime.UtcNow;
 
-            try {
+            try
+            {
                 //RedirectToAction
-                await Task.Run(() => {
+                await Task.Run(() =>
+                {
                     for (int a = 0; a < 2; a++)
                     {
                         Console.WriteLine(" Simple demonstration of await keyword.");
                     }
                 });
-                return RedirectToAction("~/Users/UserDetails");
+                return RedirectToAction("~/api/Users/UserDetails");
 
             }
             catch (Exception)
             {
-                return null;
+                return Unauthorized();
             }
         }
     }

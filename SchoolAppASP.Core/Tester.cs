@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SchoolAppASP.Core
+﻿namespace SchoolAppASP.Core
 {
     public class Tester
     {

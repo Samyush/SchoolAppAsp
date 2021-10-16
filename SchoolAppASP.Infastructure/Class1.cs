@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SchoolAppASP.Infastructure
+﻿namespace SchoolAppASP.Infastructure
 {
     public class Class1
     {
