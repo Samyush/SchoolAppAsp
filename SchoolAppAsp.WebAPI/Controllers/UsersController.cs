@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SchoolAppASP.Core;
+using SchoolAppASP.Infastructure;
 using SchoolAppASP.Infastructure.Models;
 using System;
 using System.Collections.Generic;
@@ -107,7 +108,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("test22")]
         public IActionResult Noname()
         {
-            UsersDB udb = new UsersDB();
+            Class1 udb = new Class1();
 
             return Ok(udb.UserDatas());
         }

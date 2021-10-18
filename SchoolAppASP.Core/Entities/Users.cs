@@ -1,11 +1,11 @@
 using Newtonsoft.Json;
-using SchoolAppASP.Infastructure.Models;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SchoolAppASP.Core
+namespace SchoolAppASP.Core.Entities.UserDB
 {
     public class UsersDB
     {
@@ -26,22 +26,22 @@ namespace SchoolAppASP.Core
 
         public string Email { get; set; }
 
-        public IEnumerable<object> UserDatas()
-        {
-            UserId users = new UserId();
-            users.ID = 12;
-            users.Name = "hello";
-            users.Email = "hello123";
-            users.expDt = DateTime.UtcNow;
+        //public IEnumerable<object> UserDatas()
+        //{
+        //    UserId users = new UserId();
+        //    users.ID = 12;
+        //    users.Name = "hello";
+        //    users.Email = "hello123";
+        //    users.expDt = DateTime.UtcNow;
 
-            var jsonRt = JsonConvert.SerializeObject(users);
+        //    var jsonRt = JsonConvert.SerializeObject(users);
 
-            // TODO: find the use of JsonConvert.SerializeObject()??????  
+        //    // TODO: find the use of JsonConvert.SerializeObject()??????  
 
-            //yield return jsonRt;
+        //    //yield return jsonRt;
 
-            //return new string[] { users };
-            return new object[] { users };
-        }
+        //    //return new string[] { users };
+        //    return new object[] { users };
+        //}
     }
 }
