@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public interface IUserRepository : IRepository<SchoolAppASP.Core.Entities.Users>
+//SchoolAppASP.Core.Entities.UsersDB -> the UserDB class should be namesspaced as SchoolAppASP.Core.Entities only
+
+public interface IUserRepository : IRepository<SchoolAppASP.Core.Entities.UsersDB>
 {
-    Task<IEnumerable<SchoolAppASP.Core.Entities.Users>> GetUsersByLastName(string lastName);
+    Task<IEnumerable<SchoolAppASP.Core.Entities.UsersDB>> GetUsersByLastName(string lastName);
 }

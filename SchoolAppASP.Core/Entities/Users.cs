@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SchoolAppASP.Core.Entities.UserDB
+namespace SchoolAppASP.Core.Entities
 {
     public class UsersDB
     {
