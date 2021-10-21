@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SchoolAppASP.Core;
+using SchoolAppASP.Core.Entities;
 using SchoolAppASP.Infastructure;
-using SchoolAppASP.Infastructure.Models;
 using System;
 using System.Collections.Generic;
 
@@ -44,11 +44,11 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("UserDetails")]
         public IEnumerable<object> UserData()
         {
-            Users users = new Users();
-            users.ID = 12;
-            users.Name = "hello";
+            UsersDB users = new UsersDB();
+            users.UserId = 12;
+            users.FirstName = "hello";
             users.Email = "hello123";
-            users.expDt = DateTime.UtcNow;
+            users.DateOfBirth = DateTime.UtcNow;
 
             var jsonRt = JsonConvert.SerializeObject(users);
 
@@ -67,11 +67,11 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("UserDetailsString")]
         public IEnumerable<string> UserDatas()
         {
-            Users users = new Users();
-            users.ID = 12;
-            users.Name = "hello";
+            UsersDB users = new UsersDB();
+            users.UserId = 12;
+            users.FirstName = "hello";
             users.Email = "hello123";
-            users.expDt = DateTime.UtcNow;
+            users.DateOfBirth = DateTime.UtcNow;
 
             var jsonRt = JsonConvert.SerializeObject(users);
 
@@ -87,11 +87,11 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("UserDetails2")]
         public string UserData2()
         {
-            Users users = new Users();
-            users.ID = 12;
-            users.Name = "hello";
+            UsersDB users = new UsersDB();
+            users.UserId = 12;
+            users.FirstName = "hello";
             users.Email = "hello123";
-            users.expDt = DateTime.UtcNow;
+            users.DateOfBirth = DateTime.UtcNow;
 
             var jsonRt = JsonConvert.SerializeObject(users);
 
@@ -118,7 +118,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("test123")]
         public string Test()
         {
-            Users csvt = new Users();
+            UsersDB csvt = new UsersDB();
             return csvt.ToString();
         }
 

@@ -7,10 +7,14 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolAppASP.Core\SchoolAppASP.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Microsoft.EntityFrameworkCore" />
+  </ItemGroup>
 </Project>

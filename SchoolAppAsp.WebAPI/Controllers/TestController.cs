@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SchoolAppASP.Infastructure;
-using SchoolAppASP.Infastructure.Models;
+using SchoolAppASP.Core.Entities;
 using System;
 using System.Threading.Tasks;
 
@@ -55,11 +55,11 @@ namespace SchoolAppAsp.WebAPI.Controllers
         [Route("sam")]
         public async Task<IActionResult> Adds()
         {
-            Users users = new Users();
-            users.ID = 12;
-            users.Name = "hello";
+            UsersDB users = new UsersDB();
+            users.UserId = 12;
+            users.FirstName = "hello";
             users.Email = "hello123";
-            users.expDt = DateTime.UtcNow;
+            users.DateOfBirth = DateTime.UtcNow;
 
             try
             {

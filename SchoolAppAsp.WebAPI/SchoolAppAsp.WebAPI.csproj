@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj" />
     <ProjectReference Include="..\SchoolAppASP.Core\SchoolAppASP.Core.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
