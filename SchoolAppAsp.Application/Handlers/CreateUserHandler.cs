@@ -1,23 +1,27 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
 
-public class CreateEmployeeHandler : IRequestHandler<CreateUsersCommand, UserResponse>
+namespace SchoolAppASP.Application.Handlers
 {
-    private readonly IRequestRepository _userRepo;
-    public CreateEmployeeHandler(IUserRepository userRepository)
+    public class CreateUserHandler : IRequestHandler<CreateUsersCommand, UserResponse>
     {
-        _userRepo = userRepository;
-    }
-    public async Task<UserResponse> Handle(CreateUsersCommand request, CancellationToken cancellationToken)
-    {
-        var employeeEntitiy = UserMapper.Mapper.Map<SchoolAppASP.Core.Entities.UsersDB>(request);
-        if (employeeEntitiy is null)
+        private readonly IUserRepository _userRepo;
+        public CreateUserHandler(IUserRepository userRepository)
         {
-            throw new ApplicationException("Issue with mapper");
+            _userRepo = userRepository;
         }
-        var newEmployee = await _userRepo.AddAsync(employeeEntitiy);
-        var employeeResponse = UserMapper.Mapper.Map<UserResponse>(newEmployee);
-        return employeeResponse;
+        public async Task<UserResponse> Handle(CreateUsersCommand request, CancellationToken cancellationToken)
+        {
+            var employeeEntitiy = UserMapper.Mapper.Map<Core.Entities.UsersDB>(request);
+            if (employeeEntitiy is null)
+            {
+                throw new ApplicationException("Issue with mapper");
+            }
+            var newEmployee = await _userRepo.AddAsync(employeeEntitiy);
+            var employeeResponse = UserMapper.Mapper.Map<UserResponse>(newEmployee);
+            return employeeResponse;
+        }
     }
 }

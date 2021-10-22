@@ -1,3 +1,4 @@
+using MediatR;
 using System;
 
 public class CreateUsersCommand : IRequest<UserResponse>

@@ -1,3 +1,4 @@
+using AutoMapper;
 using System;
 
 public class UserMapper
@@ -7,7 +8,7 @@ public class UserMapper
         var config = new MapperConfiguration(cfg =>
         {
             cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
-            cfg.AddProfile<EmployeeMappingProfile>();
+            cfg.AddProfile<UserMappingProfile>();
         });
         var mapper = config.CreateMapper();
         return mapper;
