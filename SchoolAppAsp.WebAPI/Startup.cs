@@ -9,7 +9,6 @@ using SchoolAppASP.Application.Handlers;
 using SchoolAppASP.Infastructure;
 using SchoolAppASP.Infastructure.Data;
 using SchoolAppASP.Infastructure.Repositories;
-using AutoMapper;
 using MediatR;
 using System.Reflection;
 
@@ -68,7 +67,6 @@ namespace SchoolAppAsp.WebAPI
             {
                 endpoints.MapControllers();
             });
-
 
         }
     }
