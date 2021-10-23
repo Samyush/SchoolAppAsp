@@ -1,4 +1,5 @@
 using AutoMapper;
+using SchoolAppASP.Application.Commands;
 
 public class UserMappingProfile : Profile
 {

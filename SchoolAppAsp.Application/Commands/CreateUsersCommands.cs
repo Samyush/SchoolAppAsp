@@ -1,32 +1,35 @@
 using MediatR;
 using System;
 
-public class CreateUsersCommand : IRequest<UserResponse>
+namespace SchoolAppASP.Application.Commands
 {
-    public string FirstName
+    public class CreateUsersCommand : IRequest<UserResponse>
     {
-        get;
-        set;
-    }
-    public string LastName
-    {
-        get;
-        set;
-    }
-    public DateTime DateOfBirth
-    {
-        get;
-        set;
-    }
-    public string PhoneNumber
-    {
-        get;
-        set;
-    }
-    public string Email
-    {
-        get;
-        set;
-    }
+        public string FirstName
+        {
+            get;
+            set;
+        }
+        public string LastName
+        {
+            get;
+            set;
+        }
+        public DateTime DateOfBirth
+        {
+            get;
+            set;
+        }
+        public string PhoneNumber
+        {
+            get;
+            set;
+        }
+        public string Email
+        {
+            get;
+            set;
+        }
 
+    }
 }

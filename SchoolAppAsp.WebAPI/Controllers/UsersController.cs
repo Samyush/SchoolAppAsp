@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using SchoolAppASP.Application.Commands;
 using SchoolAppASP.Core;
 using SchoolAppASP.Core.Entities;
 using SchoolAppASP.Infastructure;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,6 +17,27 @@ namespace SchoolAppAsp.WebAPI.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
+        private readonly IMediator _mediator;
+       
+        public UsersController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<List<SchoolAppASP.Core.Entities.UsersDB>> Get()
+        {
+            return await _mediator.Send(new GetAllUserQuery());
+        }
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<ActionResult<UserResponse>> CreateEmployee([FromBody] CreateUsersCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
         [HttpPost]
         [Route("Login")]
         public string Login(string name, string password)
@@ -122,5 +147,9 @@ namespace SchoolAppAsp.WebAPI.Controllers
             return csvt.ToString();
         }
 
+    }
+
+    internal class GetAllUserQuery : IRequest<List<UsersDB>>
+    {
     }
 }
