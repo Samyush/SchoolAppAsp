@@ -13,7 +13,13 @@ namespace SchoolAppASP.Infastructure.Repositories
 
         public async Task<IEnumerable<UsersDB>> GetUsersByLastName(string lastName)
         {
-            return await _userContext.Users1.Where(m => m.LastName == lastName).ToListAsync();
+            return await _userContext.Users.Where(m => m.LastName == lastName).ToListAsync();
+        }
+
+        //trying upon Login of the applicaiton
+        public async Task<IEnumerable<UsersDB>> Login(string email, string phoneNum)
+        {
+            return await _userContext.Users.Where(m => m.Email == email && m.PhoneNumber == phoneNum).ToListAsync();
         }
     }
 }

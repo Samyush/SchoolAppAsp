@@ -1,17 +1,20 @@
 using AutoMapper;
 using System;
 
-public class UserMapper
+namespace SchoolAppASP.Application.Mappers
 {
-    private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
+    public class UserMapper
     {
-        var config = new MapperConfiguration(cfg =>
+        private static readonly Lazy<IMapper> Lazy = new Lazy<IMapper>(() =>
         {
-            cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
-            cfg.AddProfile<UserMappingProfile>();
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
+                cfg.AddProfile<UserMappingProfile>();
+            });
+            var mapper = config.CreateMapper();
+            return mapper;
         });
-        var mapper = config.CreateMapper();
-        return mapper;
-    });
-    public static IMapper Mapper => Lazy.Value;
+        public static IMapper Mapper => Lazy.Value;
+    }
 }

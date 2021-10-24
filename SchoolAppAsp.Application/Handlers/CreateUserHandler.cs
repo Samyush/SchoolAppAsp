@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using SchoolAppASP.Application.Commands;
+using SchoolAppASP.Application.Mappers;
 
 namespace SchoolAppASP.Application.Handlers
 {
@@ -15,14 +16,14 @@ namespace SchoolAppASP.Application.Handlers
         }
         public async Task<UserResponse> Handle(CreateUsersCommand request, CancellationToken cancellationToken)
         {
-            var employeeEntitiy = UserMapper.Mapper.Map<Core.Entities.UsersDB>(request);
-            if (employeeEntitiy is null)
+            var userEntitiy = UserMapper.Mapper.Map<Core.Entities.UsersDB>(request);
+            if (userEntitiy is null)
             {
                 throw new ApplicationException("Issue with mapper");
             }
-            var newEmployee = await _userRepo.AddAsync(employeeEntitiy);
-            var employeeResponse = UserMapper.Mapper.Map<UserResponse>(newEmployee);
-            return employeeResponse;
+            var newUser = await _userRepo.AddAsync(userEntitiy);
+            var userResponse = UserMapper.Mapper.Map<UserResponse>(newUser);
+            return userResponse;
         }
     }
 }

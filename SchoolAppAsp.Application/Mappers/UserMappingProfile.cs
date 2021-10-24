@@ -1,11 +1,14 @@
 using AutoMapper;
 using SchoolAppASP.Application.Commands;
 
-public class UserMappingProfile : Profile
+namespace SchoolAppASP.Application.Mappers
 {
-    public UserMappingProfile()
+    public class UserMappingProfile : Profile
     {
-        CreateMap<SchoolAppASP.Core.Entities.UsersDB, UserResponse>().ReverseMap();
-        CreateMap<SchoolAppASP.Core.Entities.UsersDB, CreateUsersCommand>().ReverseMap();
+        public UserMappingProfile()
+        {
+            CreateMap<Core.Entities.UsersDB, UserResponse>().ReverseMap();
+            CreateMap<Core.Entities.UsersDB, CreateUsersCommand>().ReverseMap();
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace SchoolAppASP.Infastructure.Data
     public class UserContext : DbContext
     {
        
-        public DbSet<SchoolAppASP.Core.Entities.UsersDB> Users1 { get; set; }
+        public DbSet<SchoolAppASP.Core.Entities.UsersDB> Users { get; set; }
 
         public UserContext(DbContextOptions<UserContext> options) : base(options)
         {
@@ -13,8 +13,6 @@ namespace SchoolAppASP.Infastructure.Data
         }
 
     }
-
-   
 
 }
     
