@@ -23,6 +23,8 @@ namespace SchoolAppASP.Core.Entities
 
         public string Email { get; set; }
 
+        
+
         //public IEnumerable<object> UserDatas()
         //{
         //    UserId users = new UserId();

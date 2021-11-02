@@ -1,17 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using SchoolAppASP.Infastructure;
-using SchoolAppASP.Infastructure.Data;
-using SchoolAppASP.Infastructure.Repositories;
-using MediatR;
-using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SchoolAppAsp.WebAPI
+namespace SchoolAppAsp.Identity
 {
     public class Startup
     {
@@ -25,21 +23,7 @@ namespace SchoolAppAsp.WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddDbContext<UserContext>(m => m.UseSqlServer(Configuration.GetConnectionString("UserDB")), ServiceLifetime.Singleton);
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchoolApps", Version = "v1" });
-            });
-
-            services.AddAutoMapper(typeof(Startup));
-
-
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-
-            services.AddTransient<IUserRepository, UserRepository>();
-
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,14 +32,16 @@ namespace SchoolAppAsp.WebAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-                app.UseSwagger();
-
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SchoolApps v1"));
-
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -63,9 +49,8 @@ namespace SchoolAppAsp.WebAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
-
         }
     }
 }
