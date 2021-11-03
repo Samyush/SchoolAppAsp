@@ -26,7 +26,7 @@ namespace SchoolAppAsp.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<UserContext>(m => m.UseSqlServer(Configuration.GetConnectionString("UserDB")), ServiceLifetime.Singleton);
+            services.AddDbContext<SchoolAppDbContext>(m => m.UseSqlServer(Configuration.GetConnectionString("UserDB")), ServiceLifetime.Singleton);
 
             services.AddSwaggerGen(c =>
             {

@@ -9,9 +9,9 @@ namespace SchoolAppASP.Infastructure
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly UserContext _userContext;
+        protected readonly SchoolAppDbContext _userContext;
 
-        public Repository(UserContext userContext)
+        public Repository(SchoolAppDbContext userContext)
         {
             _userContext = userContext;
         }

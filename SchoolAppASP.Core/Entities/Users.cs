@@ -23,24 +23,7 @@ namespace SchoolAppASP.Core.Entities
 
         public string Email { get; set; }
 
-        
+        public string Password { get; set; }
 
-        //public IEnumerable<object> UserDatas()
-        //{
-        //    UserId users = new UserId();
-        //    users.ID = 12;
-        //    users.Name = "hello";
-        //    users.Email = "hello123";
-        //    users.expDt = DateTime.UtcNow;
-
-        //    var jsonRt = JsonConvert.SerializeObject(users);
-
-        //    // TODO: find the use of JsonConvert.SerializeObject()??????  
-
-        //    //yield return jsonRt;
-
-        //    //return new string[] { users };
-        //    return new object[] { users };
-        //}
     }
 }

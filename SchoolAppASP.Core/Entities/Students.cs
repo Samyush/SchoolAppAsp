@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SchoolAppASP.Core.Entities
 {
-    class Students
+    public class Students
     {
         [Key]
         public Int64 ID { get; set; }
