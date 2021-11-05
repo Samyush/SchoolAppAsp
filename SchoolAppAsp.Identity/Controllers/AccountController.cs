@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using SchoolAppAsp.Identity.Models;
+using SchoolAppAsp.Identity.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +17,30 @@ namespace SchoolAppAsp.Identity.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ILoginService<ApplicationUser> _loginService;
+        private readonly IConfiguration _configuration;
+
+
+        public AccountController(ILoginService<ApplicationUser> loginService, IConfiguration configuration, 
+            UserManager<ApplicationUser> userManager,
+            SignInManager<ApplicationUser> signInManager)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _loginService = loginService;
+            _configuration = configuration;
+        }
+        
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("Login")]
+        public IActionResult Login()
+        {
+            return Ok("success");
+        }
         // GET: api/<AccountController>
         [HttpGet]
         public IEnumerable<string> Get()
