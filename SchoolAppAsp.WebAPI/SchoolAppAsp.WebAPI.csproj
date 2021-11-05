@@ -20,5 +20,12 @@
     </ProjectReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Authentication\" />
+    <Folder Include="Filter\" />
+    <Folder Include="Logs\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
 
 </Project>

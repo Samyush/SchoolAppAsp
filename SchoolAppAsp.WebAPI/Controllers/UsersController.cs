@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SchoolAppASP.Application.Commands;
 using SchoolAppASP.Core;
 using SchoolAppASP.Core.Entities;
 using SchoolAppASP.Infastructure;
@@ -30,13 +29,13 @@ namespace SchoolAppAsp.WebAPI.Controllers
         {
             return await _mediator.Send(new GetAllUserQuery());
         }
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        public async Task<ActionResult<UserResponse>> CreateEmployee([FromBody] CreateUsersCommand command)
-        {
-            var result = await _mediator.Send(command);
-            return Ok(result);
-        }
+        //[HttpPost]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //public async Task<ActionResult<UserResponse>> CreateEmployee([FromBody] CreateUsersCommand command)
+        //{
+        //    var result = await _mediator.Send(command);
+        //    return Ok(result);
+        //}
 
         [HttpPost]
         [Route("Login")]
@@ -129,14 +128,7 @@ namespace SchoolAppAsp.WebAPI.Controllers
         /// and here the data has been shared from code -> Entity -> UserDB class where IEnumerable is used 
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("test22")]
-        public IActionResult Noname()
-        {
-            Class1 udb = new Class1();
-
-            return Ok(udb.UserDatas());
-        }
+      
 
 
         [HttpGet]

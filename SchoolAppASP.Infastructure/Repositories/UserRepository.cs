@@ -9,7 +9,7 @@ namespace SchoolAppASP.Infastructure.Repositories
 {
     public class UserRepository: Repository <SchoolAppASP.Core.Entities.UsersDB>, IUserRepository
     {
-        public UserRepository(UserContext userContext) : base(userContext) {}
+        public UserRepository(SchoolAppDbContext userContext) : base(userContext) {}
 
         public async Task<IEnumerable<UsersDB>> GetUsersByLastName(string lastName)
         {

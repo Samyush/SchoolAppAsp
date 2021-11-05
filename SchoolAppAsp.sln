@@ -3,13 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppAsp.WebAPI", "SchoolAppAsp.WebAPI\SchoolAppAsp.WebAPI.csproj", "{423206B8-4F37-4AEB-B320-44B1F8E4A507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolAppAsp.WebAPI", "SchoolAppAsp.WebAPI\SchoolAppAsp.WebAPI.csproj", "{423206B8-4F37-4AEB-B320-44B1F8E4A507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppASP.Infastructure", "SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj", "{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolAppASP.Infastructure", "SchoolAppASP.Infastructure\SchoolAppASP.Infastructure.csproj", "{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppASP.Core", "SchoolAppASP.Core\SchoolAppASP.Core.csproj", "{0624BC49-BC10-4376-9D7E-489B34EF58E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolAppASP.Core", "SchoolAppASP.Core\SchoolAppASP.Core.csproj", "{0624BC49-BC10-4376-9D7E-489B34EF58E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppASP.Application", "SchoolAppASP.Application\SchoolAppASP.Application.csproj", "{C31289B6-1224-456C-8FE3-96CDEF426722}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolAppASP.Application", "SchoolAppASP.Application\SchoolAppASP.Application.csproj", "{C31289B6-1224-456C-8FE3-96CDEF426722}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "identity", "identity", "{D3286760-3AE5-4335-822B-0BF9A2B600DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8A601BA2-4799-4636-9E58-5B0FF96EC6A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolAppAsp.Identity", "SchoolAppAsp.Identity\SchoolAppAsp.Identity.csproj", "{4AE2D8CC-BB57-4C94-9E4E-247FF4BF5F39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,20 @@ Global
 		{C31289B6-1224-456C-8FE3-96CDEF426722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C31289B6-1224-456C-8FE3-96CDEF426722}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C31289B6-1224-456C-8FE3-96CDEF426722}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE2D8CC-BB57-4C94-9E4E-247FF4BF5F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE2D8CC-BB57-4C94-9E4E-247FF4BF5F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE2D8CC-BB57-4C94-9E4E-247FF4BF5F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE2D8CC-BB57-4C94-9E4E-247FF4BF5F39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{423206B8-4F37-4AEB-B320-44B1F8E4A507} = {8A601BA2-4799-4636-9E58-5B0FF96EC6A8}
+		{B9616C27-9BEA-4CEB-BA8B-80E5DF09BEDE} = {8A601BA2-4799-4636-9E58-5B0FF96EC6A8}
+		{0624BC49-BC10-4376-9D7E-489B34EF58E8} = {8A601BA2-4799-4636-9E58-5B0FF96EC6A8}
+		{C31289B6-1224-456C-8FE3-96CDEF426722} = {8A601BA2-4799-4636-9E58-5B0FF96EC6A8}
+		{4AE2D8CC-BB57-4C94-9E4E-247FF4BF5F39} = {D3286760-3AE5-4335-822B-0BF9A2B600DA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {643A8575-3DF9-43BC-B5FA-C1106B82C5AA}
